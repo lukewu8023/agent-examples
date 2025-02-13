@@ -1,20 +1,25 @@
 # example2.py
 
+import os
+
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
 
-from models.model_registry import ModelRegistry
-from models.base_model import BaseModel
+from agent_core.models.base_model import BaseModel
+from agent_core.models.model_registry import ModelRegistry
+from models.gemini_15_flash_001 import Gemini15Flash001Model
 
-from agents import Agent
+from agent_core.agents import Agent
 
 
-class Gemini15PRO002Model(BaseModel):
+class Gemini15Flash001Model(BaseModel):
     def __init__(self):
-        super().__init__(name="gemini-1.5-pro-002")
+        super().__init__()
         self.model_instance = ChatOpenAI(
-            model="gemini-1.5-pro-002", temperature=0.1, verbose=True
+            model_name="gemini-1.5-flash-001", temperature=0.1, verbose=True
         )
+        os.getenv("openai_api_key")
+        pass
 
     def process(self, request: str) -> str:
         messages = [
@@ -28,12 +33,15 @@ class Gemini15PRO002Model(BaseModel):
             # Fallback in case 'content' is missing
             return str(response)
 
+    def name(self) -> str:
+        return "gemini-1.5-flash-001"
+
 
 def main():
 
-    ModelRegistry.register_model(Gemini15PRO002Model())
+    ModelRegistry.register_model(Gemini15Flash001Model())
 
-    agent = Agent(model="gemini-1.5-pro-002")
+    agent = Agent(model_name="gemini-1.5-flash-001")
     agent.execute("Who are you?")
     print(f"Response: {agent.execution_responses}")
 
