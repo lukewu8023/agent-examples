@@ -1,4 +1,4 @@
-# example2.py
+# new_model_registery.py
 
 import os
 
@@ -7,7 +7,6 @@ from langchain_core.messages import HumanMessage
 
 from agent_core.models.base_model import BaseModel
 from agent_core.models.model_registry import ModelRegistry
-from models.gemini_15_flash_001 import Gemini15Flash001Model
 
 from agent_core.agents import Agent
 
