@@ -8,8 +8,7 @@ Welcome to the **PhAENix Agent Examples** repository! This project contains **co
 
 1. [Introduction](#introduction)
 2. [Examples Overview](#examples-overview)
-3. [Example Documentation Template](#example-documentation-template)
-4. [Contributing](#contributing)
+3. [Contributing](#contributing)
 
 ---
 
@@ -22,18 +21,19 @@ PhAENix is designed to simplify building robust LLM-based agents by providing:
 - **Customizable** LLM configurations
 - **Tool & API Integrations** for dynamic, real-time data processing
 
-This repository demonstrates these capabilities through **12 hands-on examples**, ranging from minimal single-step queries (Example 1) to advanced multi-step planning with external tools and validations (Examples 5, 6, and beyond). Each example includes:
+This repository demonstrates these capabilities through **14 hands-on examples**, ranging from minimal single-step queries (Example 1) to advanced multi-step planning with external tools and validations (Examples 5, 6, and beyond). Each example includes:
 
-- A **concise summary** of the use case  
-- **Links to the code** within this repository  
+- A **concise summary** of the use case
+- **Links to the code** within this repository
 - **Links to a sub-README** for deeper details (e.g., parameter definitions, alternative approaches, and scenario variations)
 
 By exploring these examples, you’ll learn how to:
-- Configure and switch between **various LLM models**  
-- Implement **step-based** and **graph-based** planning flows  
-- Retrieve and summarize execution outputs (e.g., **history and results**)  
-- Integrate **external tools or APIs** for dynamic data access  
-- Override **default prompts** and validation logic for specialized behaviors  
+
+- Configure and switch between **various LLM models**
+- Implement **step-based** and **graph-based** planning flows
+- Retrieve and summarize execution outputs (e.g., **history and results**)
+- Integrate **external tools or APIs** for dynamic data access
+- Override **default prompts** and validation logic for specialized behaviors
 - Manage context or background knowledge to fine-tune the agent’s perspective
 
 Whether you’re a first-time user or an advanced developer, these examples will guide you in building your own robust LLM-based agent using PhAENix.
@@ -44,20 +44,22 @@ Whether you’re a first-time user or an advanced developer, these examples will
 
 Below is a high-level summary of the 12 examples. Click on each **Example Title** to jump to the documentation template below or directly view the corresponding code and sub-README.
 
-| **Example #** | **Example Title**                        | **Short Description**                                                                                                           | **Code Link**       | **Details (Sub-README)**      |
-| ------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ----------------------------- |
-| 1             | Minimal Single-Step Execution            | Showcases a basic Agent creation with a custom model and a single-step query (`agent.execute("Who are you?")`).                 | [Code](./example1)  | [Docs](./example1/README.md)  |
-| 2             | Basic Step-Based Planning                | Demonstrates using a `GenericPlanner` to break a task into multiple steps (e.g., “3 steps draw a flower.”).                     | [Code](./example2)  | [Docs](./example2/README.md)  |
-| 3             | Multiple Agents & Different Models       | Illustrates running two agents simultaneously, each with distinct model and planner configurations.                             | [Code](./example3)  | [Docs](./example3/README.md)  |
-| 4             | Retrieving Execution History & Summaries | Shows how to retrieve and summarize multi-step execution via `agent.get_execution_result_summary()`.                            | [Code](./example4)  | [Docs](./example4/README.md)  |
-| 5             | Using GraphPlanner with Validation       | Introduces the `GraphPlanner` along with validators, demonstrating an advanced planning approach and debugging logs.            | [Code](./example5)  | [Docs](./example5/README.md)  |
-| 6             | Tool Integration & Graph Planner         | Highlights using built-in tools (e.g., event, metric, log, trace) with `GraphPlanner` to analyze external data and root causes. | [Code](./example6)  | [Docs](./example6/README.md)  |
-| 7             | Agent Knowledge & Background Setup       | Demonstrates embedding domain knowledge and background context (e.g., a professional artist) for specialized task execution.    | [Code](./example7)  | [Docs](./example7/README.md)  |
-| 8             | Configuring Log Levels & Planner         | Shows how to set log levels (via environment variables or in code) and use a `GenericPlanner` for multi-step tasks.             | [Code](./example8)  | [Docs](./example8/README.md)  |
-| 9             | Overriding Default Prompts               | Explores customizing prompts for validators, single-step execution, multi-step planning, and final summaries.                   | [Code](./example9)  | [Docs](./example9/README.md)  |
-| 10            | Using Context for Role-Based Execution   | Demonstrates adding context (e.g., “digital artist” role) to guide the Agent’s behavior and outputs.                            | [Code](./example10) | [Docs](./example10/README.md) |
-| 11            | Advanced Validator Management            | Showcases enabling, adding, and updating multiple validators to refine agent outputs and handle specific tasks.                 | [Code](./example11) | [Docs](./example11/README.md) |
-| 12            | Advanced LLM Chat & Summarization        | Utilizes `agent.llm_chat` for direct text processing and summarizes the entire execution history in one prompt.                 | [Code](./example12) | [Docs](./example12/README.md) |
+| **Example #** | **Example Title**        | **Short Description**                                                                                                                                                      | **Code Link**                         | **Details Documentation**                  |
+| ------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------------------------ |
+| 1             | Minimal Agent Creation   | Creates a basic agent with just two lines of code. Quickly demonstrates a single-step query to confirm the agent is functioning.                                           | [Code](./minimal_agent_creation.py)   | [Docs](./docs/minimal_agent_creation.md)   |
+| 2             | Step-Based Planning      | Specifies a planner to break a task into multiple steps. The agent plans first, then executes each step in sequence.                                                       | [Code](./step-based_planning.py)      | [Docs](./docs/step-based_planning.md)      |
+| 3             | Distinct Model Setup     | Assigns distinct models to different components (e.g., agent, planner). This enables flexible, specialized capabilities across the entire workflow.                        | [Code](./distinct_model_setup.py)     | [Docs](./docs/distinct_model_setup.md)     |
+| 4             | Execution Summaries      | Tracks and prints the execution history for each step. Also demonstrates summarizing results and displaying AI responses.                                                  | [Code](./execution_summaries.py)      | [Docs](./docs/execution_summaries.md)      |
+| 5             | Graph-Based Planner      | Introduces `GraphPlanner` to structure tasks as nodes in a graph. The agent arranges and executes each node-based step for advanced planning.                              | [Code](./graph-based_planner.py)      | [Docs](./docs/graph-based_planner.md)      |
+| 6             | Tools Integration        | Uses langchain tools to enhance the agent’s capabilities. Demonstrates how the agent can interact with external data to diagnose or analyze complex events.                | [Code](./tools_integration.py)        | [Docs](./docs/tools_integration.md)        |
+| 7             | Knowledge & Background   | Injects human knowledge and system background to guide the agent’s perspective. Improves accuracy for specialized tasks by focusing its domain context.                    | [Code](./knowledge_background.py)     | [Docs](./docs/knowledge_background.md)     |
+| 8             | Configurable Log Levels  | Shows how to set log levels (e.g., DEBUG, INFO, ERROR) for each entity (agent, planner, evaluator). Multiple approaches are demonstrated, including environment variables. | [Code](./configurable_log_levels.py)  | [Docs](./docs/configurable_log_levels.md)  |
+| 9             | Override Default Prompts | Prints and customizes the default prompts for validators, agents, and planners. Illustrates how altering prompts can reshape agent behavior on the fly.                    | [Code](./override_default_prompts.py) | [Docs](./docs/override_default_prompts.md) |
+| 10            | Precise Context Control  | Ensures the LLM receives only relevant context for each task. Prevents unrelated or incorrect information from influencing the agent’s output.                             | [Code](./precise_context_control.py)  | [Docs](./docs/precise_context_control.md)  |
+| 11            | Evaluators Management    | Demonstrates adding and updating evaluators (e.g., writing, coding) for dynamic task validation. Failed steps trigger re-execution or replanning to ensure success.        | [Code](./evaluators_management.py)    | [Docs](./docs/evaluators_management.md)    |
+| 12            | LLM Chat Utility         | Shows how to perform standalone LLM requests through `agent.process()`. Includes ready-made methods for evaluating or summarizing text without a full agent cycle.         | [Code](./llm_chat_utility.py)         | [Docs](./docs/llm_chat_utility.md)         |
+| 13            | Code Evaluator           | Introduces a specialized `CodingEvaluator` for assessing code generation steps. Ensures quality control and error handling when the agent produces code.                   | [Code](./code_evaluator.py)           | [Docs](./docs/code_evaluator.md)           |
+| 14            | LangGraph Integration    | Demonstrates synergy between PhAENix and LangGraph. Uses a state graph to orchestrate custom message flows and agent execution.                                            | [Code](./langgraph_integration.py)    | [Docs](./docs/langgraph_integration.md)    |
 
 ## Contributing
 
