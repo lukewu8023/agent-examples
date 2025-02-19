@@ -61,6 +61,62 @@ Below is a high-level summary of the 12 examples. Click on each **Example Title*
 | 13            | Code Evaluator           | Introduces a specialized `CodingEvaluator` for assessing code generation steps. Ensures quality control and error handling when the agent produces code.                   | [Code](./code_evaluator.py)           | [Docs](./docs/code_evaluator.md)           |
 | 14            | LangGraph Integration    | Demonstrates synergy between PhAENix and LangGraph. Uses a state graph to orchestrate custom message flows and agent execution.                                            | [Code](./langgraph_integration.py)    | [Docs](./docs/langgraph_integration.md)    |
 
+## Installation
+
+### Debug Mode
+
+#### A1. Clone the core repository
+
+```bash
+git clone https://github.com/lukewu8023/agent-core.git
+```
+
+#### A2. Clone the examples project
+
+```bash
+git clone https://github.com/lukewu8023/agent-examples.git
+cd agent-examples
+```
+
+#### A3. (Optional) Create a virtual environment
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+```
+
+#### A4. Install the project as a library
+
+```bash
+pip install -e path/to/agent-core
+```
+
+### Production Mode
+
+#### B1. Clone the examples project
+
+```bash
+git clone https://github.com/lukewu8023/agent-examples.git
+cd agent-examples
+```
+
+#### B2. (Optional) Create a virtual environment
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+```
+
+#### B3. Install the project as a library
+
+```bash
+pip install agent-core
+```
+
+This will make the agents, planners, models, etc. available in your Python environment.
+
 ## Contributing
 
 Interested in contributing a new example or improving an existing one? Please follow these steps:
